@@ -1,7 +1,7 @@
 import React from 'react';
-import { Text, View, SafeAreaView, ScrollView, Image, ImageBackground,FlatList,SectionList,styles,TouchableOpacity,TextInput } from 'react-native';
+import { Text, View, SafeAreaView, ScrollView, Image, ImageBackground, FlatList, SectionList, StyleSheet, TouchableOpacity, TextInput } from 'react-native';
 import { widthPercentageToDP as wp, heightPercentageToDP as hp } from 'react-native-responsive-screen';
-import MapView from 'react-native-maps';
+import MapView, { PROVIDER_GOOGLE } from 'react-native-maps';
 import { NavigationContainer } from '@react-navigation/native';
 import { Navigation } from 'react-native-navigation';
 
@@ -17,18 +17,18 @@ const RestaurantDetails = ({navigation}) => {
         {
             title: "Quik Bites", 
             data: ["Chicken Tikka Sub", "Cheese corn Roll ", "Cheese corn Roll ", ], 
-            img4: [require('../../../ios/Assets/Stars.png')],
+            img4: [require('../../../ios/Assets/dot11.png')],
         
         },
         {
             title: "DISH",
             data: ["Chicken Tikka Sub", "Cheese corn Roll ", "Cheese corn Roll ","Manchurian",],
-            img4: [require('../../../ios/Assets/Stars.png')], 
+            img4: [require('../../../ios/Assets/dot11.png')], 
         },
         {
             title: "Soups",
             data: ["Chicken Tikka Sub", "Cheese corn Roll ", "Cheese corn Roll ",],
-            img4: [require('../../../ios/Assets/Stars.png')], 
+            img4: [require('../../../ios/Assets/dot11.png')], 
         },
     ]
     
@@ -62,7 +62,7 @@ const RestaurantDetails = ({navigation}) => {
                     <View style={{ width: wp(100), height: 43, backgroundColor: '#F30B4B', flexDirection: 'row', alignItems: 'center' }}>
                         <Image source={require('../../../ios/Assets/backarrow.png')}
                             style={{ width: 10, height: 16, marginLeft: 10 }}></Image>
-                        <Text style={{ fontSize: 12, color: 'white', paddingLeft: 5 }}>Back</Text>
+                        <Text style={{ fontSize: 12, color: 'white', paddingLeft: 5, fontWeight: 'bold' }}>Back</Text>
                         <Image source={require('../../../ios/Assets/options.png')}
                             style={{ width: 18, height: 12, marginLeft:'auto',marginRight:15}}></Image>
 
@@ -168,9 +168,12 @@ const RestaurantDetails = ({navigation}) => {
                         keyExtractor={(item, index) => item + index}
                         sections={DATA}
                         renderItem={({ item }) => (
+                            <View>
                             <View style={{width:wp(100),height:50,backgroundColor:'skyblue',marginTop:10,flexDirection:'row',alignItems:'center'}}>
-                                <Text>{item}</Text>
-                                <Image source={item.img4} />
+                                    <Text>{item}</Text>
+                                    <Image source={item.img4}></Image>
+                                </View>
+
                                 </View>
                         )}
                         renderSectionHeader={({ section }) => (
@@ -291,7 +294,11 @@ const RestaurantDetails = ({navigation}) => {
                         
                     </View>
                     
-                    <View style={{width:wp(95),height:286,backgroundColor:'gray',alignSelf:'center',marginTop:20,}}>
+                    <View style={{ width: wp(95), height: 286, backgroundColor: 'gray', alignSelf: 'center', marginTop: 20, }}>
+                        <MapView
+
+
+                        ></MapView>
                     </View>
 
 
@@ -403,3 +410,6 @@ const RestaurantDetails = ({navigation}) => {
     )
 }
 export default RestaurantDetails;
+const styles = StyleSheet.create({
+
+})

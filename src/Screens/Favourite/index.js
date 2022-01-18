@@ -26,7 +26,7 @@ const Favourite = () => {
             <View style={{ flexDirection: 'row', backgroundColor: 'transparent', width: wp(100), height:40, justifyContent: 'space-between',marginTop:0,alignItems:'center' }}>
                 <View style={{ flexDirection: 'row', backgroundColor: 'transparent', width: wp(50), height: hp(6), alignItems: 'center', }}>
                     <Image source={require('../../../ios/Assets/ArrowBack.png')}
-                        style={{ width: 20, height: 20, marginLeft: 10 }}></Image>
+                                style={{ width: 20, height: 30, marginLeft: 10 }}></Image>
                     <Text style={{fontSize: 14, paddingLeft: 10, }}>Favourites</Text>
                    
                 </View>
