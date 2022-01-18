@@ -16,13 +16,15 @@ const Trending = () => {
         { key: 'The Sakafo Restaurant', section11: 'North* Hamburgers* pure veg', img4: require('../../../ios/Assets/time-five.png'), section12: '15-30 min', section13: '$500 For Two', section14: 'OFFER', section15: '65%NEW50' },
         { key: 'The Sakafo Restaurant', section11: 'North* Hamburgers* pure veg', img4: require('../../../ios/Assets/time-five.png'), section12: '15-30 min', section13: '$500 For Two', section14: 'OFFER', section15: '65%NEW50' },
         { key: 'The Sakafo Restaurant', section11: 'North* Hamburgers* pure veg', img4: require('../../../ios/Assets/time-five.png'), section12: '15-30 min', section13: '$500 For Two', section14: 'OFFER', section15: '65%NEW50' },
+
     ]
     
     
 
     return (
         <SafeAreaView>
-            <ScrollView>
+
+
                 <View>
                     <View style={{ flexDirection: 'row', backgroundColor: 'transparent', width: wp(100), height: hp(5),justifyContent:'space-between'}}>
                         <View style={{ flexDirection: 'row', backgroundColor: 'transparent', width: wp(50), height: hp(6),alignItems:'center',}}>
@@ -61,7 +63,7 @@ const Trending = () => {
 
                                         <View style={{ backgroundColor: 'transparent', height: 170, alignItems: 'center', justifyContent: 'center', }}>
                                             <Image source={item.img}
-                                                style={{ width: 251, height: 163, marginTop: 5 }}>
+                                                style={{ width: 251, height: 167, marginTop: 5 }}>
                                             </Image>
                                         </View>
 
@@ -100,7 +102,8 @@ const Trending = () => {
 
                     
                 </View>
-            </ScrollView>
+
+
         </SafeAreaView>
     )
 }
